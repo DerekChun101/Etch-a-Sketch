@@ -1,5 +1,16 @@
-.square {
+body {
     display: flex;
+    justify-content: center;
+}
+#grid {
+    display:flex;
+    height: 400px;
+    width: 500px;
+    flex-wrap: wrap;
+}
+.square {
     border: solid black 1px;
-    
+    height: 100px;
+    width: 100px;
+    flex-shrink: 0;
 }
