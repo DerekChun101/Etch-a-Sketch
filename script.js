@@ -25,11 +25,18 @@ function resetGrid() {
         square.style.backgroundColor = 'transparent';
     })
 }
+function deleteGrid() {
+    const grid = document.querySelector('#grid');
+    while(grid.firstChild) {
+        grid.firstChild.remove();
+    }
+}
 
 const sizeBtn = document.querySelector('#size-prompt');
 sizeBtn.addEventListener('click', () => {
     const size = prompt('Set the size of the grid');
     if(size <= 50 && size > 0 && size % 1 === 0) {
+        deleteGrid();
         createGrid(size);
     }
     else 
