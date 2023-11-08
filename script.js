@@ -7,16 +7,19 @@ function createGrid(size) {
         square.setAttribute('id', `ID${i}`);
         square.style.height = `${sizeOfSquare}px`;
         square.style.width = `${sizeOfSquare}px`;
-        square.addEventListener('mouseover', () => {
+        square.onmouseover = function setColor() {
             square.style.backgroundColor = 'black';
-        });
+        };
         
         grid.appendChild(square); 
     }
+    
     const gridBody = document.querySelector('.grid-body');
     const sizeInfo = document.querySelector('#size-info');
     sizeInfo.textContent = `${size} X ${size}`;
     gridBody.appendChild(sizeInfo);
+    
+    
 }
 function resetGrid() {
     const squares = document.querySelectorAll('.square')
@@ -31,6 +34,33 @@ function deleteGrid() {
         grid.firstChild.remove();
     }
 }
+function setRGB() {
+    const squares = document.querySelectorAll('.square')
+    
+    squares.forEach((square) => {
+        square.onmouseover = function setColor() {
+        square.style.backgroundColor = getRandomColor();
+    }
+    });
+}
+function getRandomColor() {
+    let r = Math.floor(Math.random() * 256);
+    let g = Math.floor(Math.random() * 256);
+    let b = Math.floor(Math.random() * 256);
+    let bgColor = "rgb(" + r + "," + g + "," + b + ")";
+    return bgColor;
+}
+function setBlack() {
+    const squares = document.querySelectorAll('.square')
+    
+    squares.forEach((square) => {
+        square.onmouseover = function setColor() {
+        square.style.backgroundColor = 'black';
+    }
+    });
+}
+
+
 
 const sizeBtn = document.querySelector('#size-prompt');
 sizeBtn.addEventListener('click', () => {
@@ -45,6 +75,15 @@ sizeBtn.addEventListener('click', () => {
 const resetBtn = document.querySelector('#reset');
 resetBtn.addEventListener('click', () => {
     resetGrid();
+});
+const rgbBtn = document.querySelector('#rgb');
+rgbBtn.addEventListener('click', () => {
+    setRGB();
+});
+
+const blackBtn = document.querySelector('#black');
+blackBtn.addEventListener('click', () => {
+    setBlack();
 });
 
 

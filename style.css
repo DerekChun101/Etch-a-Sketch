@@ -43,7 +43,9 @@ body {
 }
 
 #btn-container {
-    
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
 }
 #size-prompt {
     width: 100px;
@@ -53,6 +55,20 @@ body {
     background-color: transparent;
 }
 #reset {
+    width: 100px;
+    height: 40px;
+    font-size: 20px;
+    font-family:Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    background-color: transparent;
+}
+#rgb {
+    width: 100px;
+    height: 40px;
+    font-size: 20px;
+    font-family:Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    background-color: transparent;
+}
+#black {
     width: 100px;
     height: 40px;
     font-size: 20px;
