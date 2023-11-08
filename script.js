@@ -65,12 +65,12 @@ function setBlack() {
 const sizeBtn = document.querySelector('#size-prompt');
 sizeBtn.addEventListener('click', () => {
     const size = prompt('Set the size of the grid');
-    if(size <= 50 && size > 0 && size % 1 === 0) {
+    if(size <= 100 && size > 1 && size % 1 === 0) {
         deleteGrid();
         createGrid(size);
     }
     else 
-        alert('please enter a whole number between 1 and 50');
+        alert('please enter a whole number between 2 and 50');
 });
 const resetBtn = document.querySelector('#reset');
 resetBtn.addEventListener('click', () => {
