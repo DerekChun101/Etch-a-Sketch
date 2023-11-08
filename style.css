@@ -1,6 +1,6 @@
 body {
     display: flex;
-    justify-content: center;
+    justify-content: space-evenly;
 }
 #grid {
     display:flex;
@@ -9,15 +9,11 @@ body {
 
     flex-wrap: wrap;
     border: solid black 1px;
-    position: absolute;
 }
 .square {
-    min-height: 125px;
-    min-width: 125px;
-    max-height: 125px;
-    max-width: 125px;
-    flex: 0;
-    
+    display: inline-block;
+    height: 125px;
+    width: 125;
 }
 .painted {
     background-color: black;
