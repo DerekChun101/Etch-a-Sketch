@@ -4,16 +4,26 @@ function createGrid(size) {
         const square = document.createElement('div');
         const sizeOfSquare = 500/size; 
         square.classList.add('square');
-        square.setAttribute('id', i);
+        square.setAttribute('id', `ID${i}`);
         square.style.height = `${sizeOfSquare}px`;
         square.style.width = `${sizeOfSquare}px`;
         square.addEventListener('mouseover', () => {
-            square.classList.add('painted');
+            square.style.backgroundColor = 'black';
         });
         
         grid.appendChild(square); 
-
     }
+    const gridBody = document.querySelector('.grid-body');
+    const sizeInfo = document.querySelector('#size-info');
+    sizeInfo.textContent = `${size} X ${size}`;
+    gridBody.appendChild(sizeInfo);
+}
+function resetGrid() {
+    const squares = document.querySelectorAll('.square')
+    console.log(squares);
+    squares.forEach((square) => {
+        square.style.backgroundColor = 'transparent';
+    })
 }
 
 const sizeBtn = document.querySelector('#size-prompt');
@@ -24,7 +34,11 @@ sizeBtn.addEventListener('click', () => {
     }
     else 
         alert('please enter a whole number between 1 and 50');
-})
+});
+const resetBtn = document.querySelector('#reset');
+resetBtn.addEventListener('click', () => {
+    resetGrid();
+});
 
 
 
