@@ -1,5 +1,26 @@
 body {
     display: flex;
+
+    flex-direction: column;
+    margin: 0px;
+    padding: 0px;
+}
+.heading {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    flex-grow: 1;
+    background-color: black;
+    color: white;
+    margin-bottom: 20px;
+}
+.title {
+    width: 500px;
+    text-align: center;
+    font-size: 50px;
+}
+#body {
+    display: flex;
     justify-content: space-evenly;
 }
 #grid {
@@ -8,13 +29,18 @@ body {
     width: 500px;
 
     flex-wrap: wrap;
-    border: solid black 1px;
+    border: solid black 2px;
 }
 .square {
     display: inline-block;
-    height: 125px;
-    width: 125;
+   
 }
 .painted {
     background-color: black;
+}
+
+#size-prompt {
+    width: 100px;
+    height: 50px;
+    font-size: 20px;
 }

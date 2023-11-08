@@ -19,7 +19,11 @@ function createGrid(size) {
 const sizeBtn = document.querySelector('#size-prompt');
 sizeBtn.addEventListener('click', () => {
     const size = prompt('Set the size of the grid');
-    createGrid(size);
+    if(size <= 50 && size > 0 && size % 1 === 0) {
+        createGrid(size);
+    }
+    else 
+        alert('please enter a whole number between 1 and 50');
 })
 
 
